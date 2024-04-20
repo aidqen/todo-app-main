@@ -5,25 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- displays site properly based on user's device -->
 
-
     <title>Todo app</title>
     <link rel="stylesheet" href="css/base.css" />
   </head>
   <body>
     <div class="container">
       <header class="flex flex-row">
-      <h1>Todo</h1>
-      <img src="images/icon-moon.svg" alt="icon-moon">
+        <h1>Todo</h1>
+        <img src="images/icon-moon.svg" alt="icon-moon" />
       </header>
+      <div class="get-new-todo flex flex-row flex-center">
+        <div class="checkbox"></div>
+        <input type="text" placeholder="Create a new todo" />
+      </div>
+
       <main>
-        <div class="get-new-todo flex flex-row">
-          <div class="checkbox active"></div>
-          <input type="text" placeholder="Create a new todo">
-        </div>
-
-        <div class="todos">
-
-        </div>
+        <div class="todos"></div>
         <footer class="flex flex-row">
           <p class="tasks-count">3 items left</p>
           <div class="sort-container flex flex-row">
@@ -36,5 +33,7 @@
       </main>
       <p class="comment">Drag and drop to reorder list</p>
     </div>
+
+    <script type="module" src="js/controller.js"></script>
   </body>
 </html>
