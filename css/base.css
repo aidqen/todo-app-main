@@ -1,2 +1,4 @@
 @import url(css/main.css);
 @import url(css/vars.css);
+@import url(css/cmp/header.css);
+@import url(css/cmp/main-section.css);

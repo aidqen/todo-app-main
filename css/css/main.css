@@ -4,7 +4,7 @@
 
 body {
     display: grid;
-    grid-template-columns: 1fr max-content 1fr;
+    grid-template-columns: 1fr 25em 1fr;
     margin: 0;
     padding: 0;
     font-size: 18px;
@@ -23,10 +23,17 @@ body {
 }
 
 .checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 50%;
     border: 1px solid lightgray;
-    width: 1.5em;
-    height: 1.5em;
+    width: 1.2em;
+    height: 1.2em;
+}
+
+.checkbox.active {
+    background-color: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
 }
 
 .checkbox.active::before {
