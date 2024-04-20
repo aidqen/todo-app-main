@@ -17,3 +17,20 @@
 --very-dark-grayish-blue: hsl(233, 14%, 35%);
 --very-dark-grayish-blue-2: hsl(237, 14%, 26%);
 }
+
+.flex {
+    display: flex;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}

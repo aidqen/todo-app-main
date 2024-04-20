@@ -18,4 +18,18 @@ body {
     color: white;
 }
 
+.container {
+    grid-column: 2;
+}
+
+.checkbox {
+    border-radius: 50%;
+    border: 1px solid lightgray;
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.checkbox.active::before {
+    content: "✔";
+}
 
