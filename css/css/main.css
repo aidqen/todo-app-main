@@ -1,0 +1,21 @@
+*, *::before, *::after {
+    box-sizing: border-box
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(/images/bg-desktop-dark.jpg);
+    background-size: 100% 35vh; /* Set background size to cover only the top 30% of viewport height */
+    background-position: center top; /* Align background image to the top */
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-color: var(--very-dark-blue);
+    color: white;
+}
+
+
