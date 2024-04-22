@@ -16,17 +16,24 @@ function renderTodos() {
   const elTodos = document.querySelector('div.todos')
   const todos = userService.getTodos()
 
-  const strHTML = todos.map(todo => {
+  const strHTML = todos
+    .map(todo => {
+      console.log(todo.id)
+      var elClass = ['todo', `${todo.id}`]
+      if (todo.completed) {
+        elClass.push('completed')
+      }
         return `
-        <div class="todo todo-${todo.id}">
-        <div class="checkbox" onclick="app.onToggleCheckbox(this)"></div>
+        <div class="${elClass.join(
+          ' '
+        )}" onclick="app.onToggleCheckbox(this, '${todo.id}')">
+        <div class="checkbox"></div>
         <p>${todo.text}</p>
-        <button class="remove-btn" onRemoveTodo(${todo.id})></button>
+        <button class="remove-btn" onRemoveTodo(${todo.id})>X</button>
         </div>
          `
-  }).join('')
-  console.log(todos);
-  console.log(strHTML);
+    })
+    .join('')
 
   elTodos.innerHTML = strHTML
 }
