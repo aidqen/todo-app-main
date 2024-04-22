@@ -42,3 +42,7 @@ function addTodo(value) {
   _makeTodo(value)
 }
 
+function removeTodo(todoId) {
+  const selectedTodo = findTodoById(todoId)
+  console.log(selectedTodo)
+}

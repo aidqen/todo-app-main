@@ -1,6 +1,4 @@
 main {
-    /* display: flex;
-    flex-direction: column; */
     background-color: var(--very-dark-desaturated-blue);
 }
 
@@ -55,6 +53,9 @@ main .sort-container > * {
 }
 
 .remove-btn {
+    /* position: absolute;
+    right: 5px;
+    z-index: 10; */
     display: none;
     cursor: pointer;
 }

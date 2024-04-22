@@ -6,7 +6,8 @@ window.onload = onInit
 
 window.app = {
   onToggleCheckbox,
-  onAddTodo
+  onAddTodo,
+  onRemoveTodo
 }
 
 function onInit() {
@@ -24,13 +25,13 @@ function renderTodos() {
       if (todo.completed) {
         elClass.push('completed')
       }
-        return `
+      return `
         <div class="${elClass.join(
           ' '
-        )}" onclick="app.onToggleCheckbox(this, '${todo.id}')">
-        <div class="checkbox"></div>
-        <p>${todo.text}</p>
-        <button class="remove-btn" onRemoveTodo(${todo.id})>X</button>
+        )}" >
+        <div class="checkbox onclick="app.onToggleCheckbox('${todo.id}')""></div>
+        <p onclick="app.onToggleCheckbox('${todo.id}')">${todo.text}</p>
+        <button class="remove-btn" onclick="app.onRemoveTodo(event,'${todo.id}')">X</button>
         </div>
          `
     })
@@ -39,9 +40,13 @@ function renderTodos() {
   elTodos.innerHTML = strHTML
 }
 
-function onToggleCheckbox(elTodo, todoId) {
+function onToggleCheckbox(todoId) {
+  const elTodos = document.querySelectorAll('.todo')
+  const todosArr = Array.from(elTodos)
+  const selectedTodo = todosArr.find(todo => todo.classList.contains(todoId))
+  selectedTodo.classList.toggle('completed')
   userService.toggleCheckbox(todoId)
-  elTodo.classList.toggle('completed')
+  // elTodo.classList.toggle('completed')
 }
 
 function onAddTodo(ev, elForm) {
@@ -51,3 +56,9 @@ function onAddTodo(ev, elForm) {
   renderTodos()
 }
 
+function onRemoveTodo(ev,todoId) {
+  ev.preventDefault()
+  userService.removeTodo(todoId)
+  console.log('hi')
+  renderTodos()
+}
