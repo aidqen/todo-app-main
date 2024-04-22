@@ -18,6 +18,22 @@
 --very-dark-grayish-blue-2: hsl(237, 14%, 26%);
 }
 
+
+.josefin-sans-light {
+    font-family: "Josefin Sans";
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  .josefin-sans-bold {
+    font-family: "Josefin Sans";
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+
 .flex {
     display: flex;
 }

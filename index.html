@@ -8,14 +8,14 @@
     <title>Todo app</title>
     <link rel="stylesheet" href="css/base.css" />
   </head>
-  <body onload="app.onInit()">
-    <div class="container">
+  <body>
+    <div class="container josefin-sans-light">
       <header class="flex flex-row">
         <h1>Todo</h1>
         <img src="images/icon-moon.svg" alt="icon-moon" />
       </header>
       <div class="get-new-todo flex flex-row flex-center">
-        <div class="checkbox" onclick="app.onToggleCheckbox(this)">+</div>
+        <div class="checkbox" onclick="app.onAddTodo(this)">+</div>
         <input type="text" placeholder="Create a new todo" />
       </div>
 
