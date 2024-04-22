@@ -4,6 +4,8 @@ import { utilService } from './util.service.js'
 
 export const userService = {
   getTodos,
+  addTodo,
+  removeTodo
 }
 
 var gTodos = []
@@ -23,5 +25,14 @@ function createTodos() {
 }
 
 function _makeTodo(text) {
-  gTodos.push({ text, completed: false, id: utilService.getRandomId() })
+  gTodos.unshift({ text, completed: false, id: utilService.getRandomId(4) })
 }
+
+function findTodoById(todoId) {
+  return gTodos.find(todo => todo.id === todoId)
+}
+
+function addTodo(value) {
+  _makeTodo(value)
+}
+

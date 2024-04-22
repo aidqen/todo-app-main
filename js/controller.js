@@ -6,6 +6,7 @@ window.onload = onInit
 
 window.app = {
   onToggleCheckbox,
+  onAddTodo
 }
 
 function onInit() {
@@ -38,6 +39,10 @@ function renderTodos() {
   elTodos.innerHTML = strHTML
 }
 
-function onToggleCheckbox(elBtn) {
-  elBtn.classList.toggle('active')
+function onAddTodo(ev, elForm) {
+  ev.preventDefault()
+  const elInput = elForm.querySelector('input')
+  userService.addTodo(elInput.value)
+  renderTodos()
 }
+
