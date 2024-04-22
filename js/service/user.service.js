@@ -4,6 +4,7 @@ import { utilService } from './util.service.js'
 
 export const userService = {
   getTodos,
+  toggleCheckbox,
   addTodo,
   removeTodo
 }
@@ -30,6 +31,11 @@ function _makeTodo(text) {
 
 function findTodoById(todoId) {
   return gTodos.find(todo => todo.id === todoId)
+}
+
+function toggleCheckbox(todoId) {
+  const selectedTodo = findTodoById(todoId)
+  selectedTodo.completed = !selectedTodo.completed
 }
 
 function addTodo(value) {

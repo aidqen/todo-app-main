@@ -39,6 +39,11 @@ function renderTodos() {
   elTodos.innerHTML = strHTML
 }
 
+function onToggleCheckbox(elTodo, todoId) {
+  userService.toggleCheckbox(todoId)
+  elTodo.classList.toggle('completed')
+}
+
 function onAddTodo(ev, elForm) {
   ev.preventDefault()
   const elInput = elForm.querySelector('input')
