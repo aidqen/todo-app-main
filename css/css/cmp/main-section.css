@@ -13,10 +13,24 @@ main footer {
 
 main footer > * {
     margin-inline: 1em;
+    cursor: pointer;
 }
 
-main .sort-container > *{
+footer .sort-container > *:hover {
+    font-weight: 400;
+}
+
+footer p {
+    transition: 0.2s;
+}
+
+footer p:hover {
+    font-weight: 400;
+}
+
+main .sort-container > * {
     margin-inline-start: 1em;
+    transition: 0.2s;
 }
 
 .todo {
@@ -28,6 +42,21 @@ main .sort-container > *{
     height: 2.8em;
     padding: 0 0.5em 0 0.6em;
     border-bottom: 1px solid var(--very-dark-grayish-blue-2);
+    cursor: pointer;
+}
+
+.todo.completed p {
+    text-decoration: line-through;
+    color: rgba(136, 136, 136, 0.944);
+}
+
+.todo:hover .remove-btn {
+    display:block
+}
+
+.remove-btn {
+    display: none;
+    cursor: pointer;
 }
 
 .todo p {
@@ -52,9 +81,14 @@ main .sort-container > *{
     opacity: 0.8;
 }
 
-.checkbox.active::before {
+.todo.completed .checkbox::before {
     content: "✔";
     font-size: 14px;
+    font-weight: 100;
+    color: white;
+}
+
+.todo.completed .checkbox {
     background: linear-gradient(to bottom, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
 }
 
