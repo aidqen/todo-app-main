@@ -43,6 +43,8 @@ function addTodo(value) {
 }
 
 function removeTodo(todoId) {
-  const selectedTodo = findTodoById(todoId)
-  console.log(selectedTodo)
+  const idx = gTodos.findIndex(todo => todo.id === todoId)
+  gTodos.splice(idx, 1)
+}
+
 }

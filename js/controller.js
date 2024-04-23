@@ -7,7 +7,8 @@ window.onload = onInit
 window.app = {
   onToggleCheckbox,
   onAddTodo,
-  onRemoveTodo
+  onRemoveTodo,
+  onSetSort
 }
 
 function onInit() {
@@ -56,9 +57,8 @@ function onAddTodo(ev, elForm) {
   renderTodos()
 }
 
-function onRemoveTodo(ev,todoId) {
+function onRemoveTodo(ev, todoId) {
   ev.preventDefault()
   userService.removeTodo(todoId)
-  console.log('hi')
   renderTodos()
 }
