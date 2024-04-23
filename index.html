@@ -25,14 +25,14 @@
         <footer class="flex flex-row">
           <p class="tasks-count">3 items left</p>
           <div class="sort-container flex flex-row">
-            <p>All</p>
-            <p>Active</p>
-            <p>Completed</p>
+            <p onclick="app.onSetSort(this.innerText)">All</p>
+            <p onclick="app.onSetSort(this.innerText)">Active</p>
+            <p onclick="app.onSetSort(this.innerText)">Completed</p>
           </div>
-          <p class="clear-completed">Clear Completed</p>
+          <p class="clear-completed" onclick="app.onClearCompleted()">Clear Completed</p>
         </footer>
       </main>
-      <p class="comment">Drag and drop to reorder list</p>
+      <p class="comment flex flex-center">Drag and drop to reorder list</p>
     </div>
 
     <script type="module" src="js/controller.js"></script>

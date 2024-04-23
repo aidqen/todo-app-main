@@ -77,3 +77,8 @@ function onRemoveTodo(ev, todoId) {
   userService.removeTodo(todoId)
   renderTodos()
 }
+
+function onClearCompleted() {
+  userService.clearCompleted()
+  renderTodos()
+}

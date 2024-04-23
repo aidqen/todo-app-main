@@ -8,8 +8,9 @@ export const userService = {
   addTodo,
   removeTodo,
   setSort,
+  clearCompleted,
 }
-
+var gFilter
 var gTodos = []
 
 function getTodos() {
@@ -18,7 +19,7 @@ function getTodos() {
     return gTodos
   }
   if (!gFilter) {
-  return gTodos
+    return gTodos
   }
   if (gFilter === 'active') {
     return gTodos.filter(todo => !todo.completed)
@@ -68,3 +69,11 @@ function setSort(sortValue) {
   }
 }
 
+function clearCompleted() {
+  gTodos.forEach((todo, idx) => {
+    console.log(todo);
+    if (todo.completed) {
+      gTodos.splice(idx, 1)
+    }
+  })
+}
