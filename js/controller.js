@@ -37,7 +37,7 @@ function renderTodos() {
          `
     })
     .join('')
-
+  updateTodosLeft(todos)
   elTodos.innerHTML = strHTML
 }
 
@@ -45,6 +45,12 @@ function onSetSort(value) {
   console.log(value);
   userService.setSort(value)
   renderTodos()
+}
+
+function updateTodosLeft(todos) {
+  const filter = todos.filter(todo => todo.completed === false)
+
+  document.querySelector('.tasks-count').innerText = `${filter.length} items left`
 }
 
 function onToggleCheckbox(todoId) {
