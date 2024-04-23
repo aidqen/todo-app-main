@@ -1,0 +1,12 @@
+@media (max-width:1440px) {
+    body {
+        grid-template-columns: 1fr 25em 1fr;
+        font-size: 14px;
+    }
+
+    main footer > * {
+        margin-inline: 0.4em;
+        cursor: pointer;
+        font-size: 12px;
+    }
+}
