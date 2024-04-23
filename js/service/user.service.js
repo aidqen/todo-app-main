@@ -6,7 +6,8 @@ export const userService = {
   getTodos,
   toggleCheckbox,
   addTodo,
-  removeTodo
+  removeTodo,
+  setSort,
 }
 
 var gTodos = []

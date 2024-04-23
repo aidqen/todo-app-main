@@ -21,18 +21,17 @@ function renderTodos() {
 
   const strHTML = todos
     .map(todo => {
-      console.log(todo.id)
       var elClass = ['todo', `${todo.id}`]
       if (todo.completed) {
         elClass.push('completed')
       }
       return `
-        <div class="${elClass.join(
-          ' '
-        )}" >
-        <div class="checkbox onclick="app.onToggleCheckbox('${todo.id}')""></div>
+        <div class="${elClass.join(' ')}" >
+        <div class="checkbox" onclick="app.onToggleCheckbox('${todo.id}')"></div>
         <p onclick="app.onToggleCheckbox('${todo.id}')">${todo.text}</p>
-        <button class="remove-btn" onclick="app.onRemoveTodo(event,'${todo.id}')">X</button>
+        <button class="remove-btn" onclick="app.onRemoveTodo(event,'${
+          todo.id
+        }')">X</button>
         </div>
          `
     })
@@ -46,8 +45,11 @@ function onToggleCheckbox(todoId) {
   const todosArr = Array.from(elTodos)
   const selectedTodo = todosArr.find(todo => todo.classList.contains(todoId))
   selectedTodo.classList.toggle('completed')
+
   userService.toggleCheckbox(todoId)
-  // elTodo.classList.toggle('completed')
+
+  const todos = userService.getTodos()
+  updateTodosLeft(todos)
 }
 
 function onAddTodo(ev, elForm) {
