@@ -8,7 +8,8 @@ window.app = {
   onToggleCheckbox,
   onAddTodo,
   onRemoveTodo,
-  onSetSort
+  onSetSort,
+  onClearCompleted
 }
 
 function onInit() {
@@ -38,6 +39,12 @@ function renderTodos() {
     .join('')
 
   elTodos.innerHTML = strHTML
+}
+
+function onSetSort(value) {
+  console.log(value);
+  userService.setSort(value)
+  renderTodos()
 }
 
 function onToggleCheckbox(todoId) {

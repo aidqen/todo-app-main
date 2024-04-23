@@ -12,18 +12,26 @@ export const userService = {
 
 var gTodos = []
 
-export function getTodos() {
+function getTodos() {
   if (gTodos.length === 0) {
     createTodos()
-    console.log('hi')
+    return gTodos
   }
+  if (!gFilter) {
   return gTodos
+  }
+  if (gFilter === 'active') {
+    return gTodos.filter(todo => !todo.completed)
+  }
+  if (gFilter === 'completed') {
+    return gTodos.filter(todo => todo.completed)
+  }
 }
 
 function createTodos() {
   _makeTodo('Clean my room')
-  _makeTodo('Clean my room')
-  _makeTodo('Clean my room')
+  _makeTodo('Meditate')
+  _makeTodo('Read a book')
 }
 
 function _makeTodo(text) {
@@ -48,4 +56,15 @@ function removeTodo(todoId) {
   gTodos.splice(idx, 1)
 }
 
+function setSort(sortValue) {
+  if (sortValue === 'All') {
+    gFilter = ''
+  }
+  if (sortValue === 'Active') {
+    gFilter = 'active'
+  }
+  if (sortValue === 'Completed') {
+    gFilter = 'completed'
+  }
 }
+
